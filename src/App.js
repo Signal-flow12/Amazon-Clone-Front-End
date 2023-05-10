@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import { Route, Routes} from 'react-router-dom'
+import Home from './pages/Home';
+import BooksIndex from './pages/BooksIndex';
+import BookShow from './pages/BookShow';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Amazon Clone</h1>
+      <Header />
+      <Footer />
+      <Routes>
+       < Route path='/' element={<Home /> } />
+       < Route path='/books'>
+        <Route path='' element={<BooksIndex />} />
+        <Route path=':bookId' element={<BookShow />} />
+        </Route>
+      </Routes>
     </div>
   );
 }

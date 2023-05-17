@@ -16,7 +16,7 @@ function BooksIndex () {
         try {
             let myBooks = await fetch ('http://localhost:4000/books/')
             myBooks = await myBooks.json();
-            console.log(myBooks)
+            //console.log(`This is my books ${JSON.stringify(myBooks)}`)
             setBooks(myBooks);
             //console.log(myBooks)
         }catch(err) {
@@ -49,6 +49,7 @@ function BooksIndex () {
             })
             //console.log(booksForm)
             getBooks();
+            e.target.reset();
 
         }catch(err){
             console.log(err)

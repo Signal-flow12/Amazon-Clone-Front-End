@@ -11,7 +11,6 @@ function App() {
     <div className="App">
       <h1>Amazon Clone</h1>
       <Header />
-      <Footer />
       <Routes>
        < Route path='/' element={<Home /> } />
        < Route path='/books'>
@@ -19,6 +18,7 @@ function App() {
         <Route path=':bookId' element={<BookShow />} />
         </Route>
       </Routes>
+      <Footer />
     </div>
   );
 }

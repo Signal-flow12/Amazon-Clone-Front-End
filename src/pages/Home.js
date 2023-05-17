@@ -6,7 +6,7 @@ function Home () {
 
     async function fetchSpecials() {
         try {
-            let mySpecials = await fetch('https://amazon-clone-backend-p61i.onrender.com/');
+            let mySpecials = await fetch('http://localhost:4000/');
             mySpecials = await mySpecials.json();
             console.log(mySpecials)
             setSpecials(mySpecials);
